@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Line Encoding Plots</title>
+</head>
+<body>
+  <h1>Line Encoding Plots</h1>
+  <form method="post">
+    <label for="data">Enter data (string of 0s and 1s):</label>
+    <input type="text" id="data" name="data" required pattern="[01]+">
+    <button type="submit">Generate Plots</button>
+  </form>
+  {% if request.method == 'POST' %}
+    <h2>Generated Plots</h2>
+    <img src="{{ url_for('index') }}">
+  {% endif %}
+</body>
+</html>
